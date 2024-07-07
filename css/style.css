@@ -87,7 +87,8 @@ body::-webkit-scrollbar-thumb:hover {
     padding: 0 20px;
 }
 
-.header-container {
+.header-container,
+.footer-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -95,13 +96,13 @@ body::-webkit-scrollbar-thumb:hover {
     padding: 20px 0;
 }
 
-.header__logo {
+.logo {
     width: 100px;
     height: 30px;
     transition: transform 0.3s ease;
 }
 
-.header__logo-img:hover {
+.logo-img:hover {
     transform: scale(0.95);
     opacity: 0.7;
 }
@@ -140,7 +141,6 @@ body::-webkit-scrollbar-thumb:hover {
     flex-direction: column;
     width: 50%;
     padding: 30px 0;
-    /* border: 1px solid green; */
 }
 
 .photo {
@@ -191,7 +191,6 @@ h2 {
     font-size: 20px;
     line-height: 1.5;
     letter-spacing: -2%;
-    /* padding: 0; */
 }
 
 .item {
@@ -279,6 +278,3 @@ p:not(:last-child) {
 .section__list-item::marker {
     color: var(--color-accent);
 }
-
-
-
