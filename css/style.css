@@ -1,0 +1,9 @@
+/* font-family: 'Comfortaa', sans-serif;
+font-family: 'Jura', sans-serif; */
+
+@font-face {
+    font-family: 'Comfortaa', sans-serif;
+    src: url(../assets/fonts/Comfortaa-SemiBold.woff2);
+    font-style: normal;
+    font-display: swap;
+}
