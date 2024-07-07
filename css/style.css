@@ -278,3 +278,7 @@ p:not(:last-child) {
 .section__list-item::marker {
     color: var(--color-accent);
 }
+
+.section__code {
+    width: 100%;
+}
