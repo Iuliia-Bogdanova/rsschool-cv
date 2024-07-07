@@ -1,0 +1,350 @@
+@font-face {
+    font-family: 'Varela Round', sans-serif;
+    src: url(../assets/fonts/VarelaRound-Regular.woff2);
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Comfortaa', sans-serif;
+    src: url(../assets/fonts/Comfortaa-SemiBold.woff2);
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Jura', sans-serif;
+    src: url(../assets/fonts/Jura-Regular.woff2);
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --color-main: #e3e4de;
+    --color-accent: #eab268;
+    --color-text: #2e3630;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*, 
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, 
+li {
+    list-style-type: none;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    overflow: auto;
+    font-family: 'Jura', sans-serif;
+    font-weight: normal;
+    background: var(--color-main);    
+}
+
+body::-webkit-scrollbar {
+    background: inherit;
+    width: 8px;
+    height: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border: 1px solid var(--color-accent);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-accent);
+}
+
+.header,
+.footer {
+    background-color: var(--color-accent);
+    min-height: 80px;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header-container,
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    width: 100px;
+    height: 38px;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(0.95);
+    opacity: 0.7;
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover {
+    transform: scale(0.95);
+    opacity: 0.7;
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--color-text);
+}
+
+.divider {
+    width: 90%;
+    height: 4px;
+    margin: 10px auto;
+    background-color: var(--color-text);
+    opacity: 0.4;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 30px 0;
+}
+
+.photo {
+    max-width: 300px;
+    margin: 0 auto;
+    border: 10px solid var(--color-accent);
+    border-radius: 50%;
+}
+
+.section__profile {
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 36px;
+    text-transform: capitalize;
+    opacity: 0.8;
+}
+
+.section-title {
+    padding-bottom: 20px;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+.section__contacts {
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.contacts__item {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: relative;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: -2%;
+}
+
+.item {
+    padding-left: 36px;
+    padding-bottom: 20px;
+    transition: transform 0.2s ease;
+}
+
+.item:hover {
+    transform: scale(0.95);
+    opacity: 0.8;
+}
+
+.item-city:hover {
+    transform: none;
+    opacity: 1;
+}
+
+.item-city::before {
+    position: absolute;
+    content: "";
+    background-image: url(../assets/img/city.svg);
+    width: 20px;
+    height: 24px;
+    left: 0;
+}
+
+.item-phone::before {
+    position: absolute;
+    content: "";
+    background-image: url(../assets/img/phone-call.svg);
+    width: 19px;
+    height: 19px;
+    left: 0;
+}
+
+.item-mail::before {
+    position: absolute;
+    content: "";
+    background-image: url(../assets/img/mail.svg);
+    width: 20px;
+    height: 15px;
+    left: 0;
+}
+
+.item-tg::before {
+    position: absolute;
+    content: "";
+    background-image: url(../assets/img/tg.svg);
+    width: 23px;
+    height: 20px;
+    left: 0;
+}
+
+.item-gh::before {
+    position: absolute;
+    content: "";
+    background-image: url(../assets/img/gh.svg);
+    width: 22px;
+    height: 21px;
+    left: 0;
+}
+
+p:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.summary-text {
+    text-align: right;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.section__list-item {
+    padding: 0;
+    list-style-type: circle;
+    list-style-position: inside;
+    font-size: 20px;
+    line-height: 2;
+    text-transform: capitalize;
+    transition: transform 0.2s ease;
+}
+
+.section__list-item::marker {
+    color: var(--color-accent);
+}
+
+.section__code {
+    width: 100%;
+    overflow-x: auto; 
+    white-space: pre-wrap; 
+}
+
+.section__code::-webkit-scrollbar {
+    background: inherit;
+    height: 8px;
+}
+
+.section__code::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border: 1px solid var(--color-accent);
+}
+
+.section__code::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-accent);
+}
+
+.footer-item {
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .header-logo {
+        display: none;
+    }
+    .header-nav {
+        margin: 0 auto;
+    }
+    .section {
+        width: 100%;
+        padding: 15px 0;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    .section-title {
+        padding-bottom: 15px;
+        font-size: 24px;
+    }
+    .section__contacts {
+        font-size: 22px;
+    }
+    .item {
+        padding-bottom: 10px;
+    }
+        .summary-text {
+        font-size: 18px;
+    }
+    .section__skills,
+    .section__projects,
+    .section__education,
+    .section__languages {
+        text-align: center;
+    }
+    .footer-container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+    .footer-item {
+        padding-bottom: 0;
+    }
+}

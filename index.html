@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./assets/img/rsschool-favicon.ico">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="header-container">
+                <a href="https://rs.school/courses/javascript-ru" class="logo header-logo">
+                    <img src="./assets/img/rs.svg" alt="Logo" class="logo-img">
+                </a>
+                <nav class="header-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#contacts" class="nav-link">Contacts</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#summary" class="nav-link">Summary</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#skills" class="nav-link">Skills</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#projects" class="nav-link">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#education" class="nav-link">Education</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="container">
+            <div class="main-container">
+                <div class="section section__photo">
+                    <img src="./assets/img/1.jpeg" alt="Photo" class="photo">
+                </div>
+                <section class="section section__profile">
+                    <h1>iuliia bogdanova</h1>
+                    <h2>frontend developer</h2>
+                </section>
+                <hr class="divider">
+                <section class="section section__contacts" id="contacts">
+                    <h3 class="section-title">contacts</h3>
+                    <ul class="contacts__item">
+                        <li class="item item-city">Izhevsk, Udmurtia</li>                        
+                        <li class="item">+7 963 546 30 96
+                            <a class="item-phone" href="tel:+79635463096" target="_blank"></a>
+                        </li>
+                        <li class="item">iuliia.bogdanova5020@gmail.com
+                            <a class="item-mail" href="mailto:iuliia.bogdanova5020@gmail.com" target="_blank"></a>
+                        </li>
+                        <li class="item">iuliia_bg
+                            <a class="item-tg" href="https://t.me/iuliia_bg" target="_blank"></a>
+                        </li>
+                        <li class="item">https://github.com/Iuliia-Bogdanova
+                            <a class="item-gh" href="https://github.com/Iuliia-Bogdanova" target="_blank"></a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="section section__summary" id="summary">
+                    <h3 class="section-title">summary</h3>
+                    <p class="summary-text">
+                        More than a year ago, I became passionate about frontend development and decided to change my profession. I love layout, I’m building up my knowledge of JavaScript and ReactJS.
+                    </p>
+                    <p class="summary-text">
+                        What attracts me to IT is the ability to think systematically and structurally. I am fascinated by the creative component of frontend development, which is the combination of visual appeal and user interface usability.
+                    </p>
+                    <p class="summary-text">
+                        I am attentive to details, able to take responsibility and recognize mistakes. I keep my composure and meet deadlines.
+                    </p>
+                    <p class="summary-text">
+                        My hobbies are traveling, architecture, cars, animals.
+                    </p>
+                </section>
+                <hr class="divider">
+                <section class="section section__skills" id="skills">
+                    <h3 class="section-title">skills</h3>
+                    <ul class="section__list">
+                        <li class="section__list-item">HTML</li>
+                        <li class="section__list-item">CSS/SCSS</li>
+                        <li class="section__list-item">Git</li>
+                        <li class="section__list-item">JavaScript</li>
+                        <li class="section__list-item">ReactJS</li>
+                    </ul>
+                </section>
+                <section class="section section__projects" id="projects">
+                    <h3 class="section-title">projects</h3>
+                    <ul class="section__list">
+                        <li class="section__list-item item">
+                            <a href="https://iuliia-bogdanova.github.io/Portfolio/index.html" target="_blank">frontend developer portfolio</a>
+                        </li>
+                        <li class="section__list-item item">
+                            <a href="https://b12.veganrussian.ru/" target="_blank">B12</a>
+                        </li>
+                        <li class="section__list-item item">
+                            <a href="https://iuliia-bogdanova.github.io/Tormentum/" target="_blank">tormentum</a>
+                        </li>
+                        <li class="section__list-item item">
+                            <a href="https://cats-hostel.netlify.app/" target="_blank">happy cats</a>
+                        </li>
+                        <li class="section__list-item item">
+                            <a href="https://iuliia-todo-react.netlify.app/" target="_blank">my to do list</a>
+                        </li>
+                    </ul>
+                </section>
+                <hr class="divider">
+                <section class="section section__code">
+                    <h3 class="section-title">code</h3>
+                    <pre>
+                        <code>
+                        document.addEventListener("DOMContentLoaded", function (event) {
+                            getWeather('Izhevsk');
+                        });
+
+                        function getWeather(city) {
+                            fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=d6e481919bcce169184f16536bb64bd8&units=metric')
+                                .then(response => response.json())
+                                .then(weather => {
+                                    console.log(weather);
+                                    document.querySelector('.city')
+                                    .innerText = weather.name;
+                                    document.querySelector('.date')
+                                    .innerText = new Date;
+                                    document.querySelector('.tempValue').innerText = Math.round(weather.main.temp) + " ° ";
+                                    document.querySelector('.feels_like').innerText = "feels like " + Math.round(weather.main.feels_like)  + " ° ";
+                                    document.querySelector('.weather').innerText = weather.weather[0].description;
+                                    document.querySelector('.humidity').innerText = "humidity " + weather.main.humidity + " % ";
+                                    document.querySelector('.visibility').innerText = "visibility " + weather.visibility + " m ";
+                                })
+                            .catch(err => console.log(err));
+                        }
+                        </code>
+                    </pre>
+                </section>
+                <hr class="divider">
+                <section class="section section__education" id="education">
+                    <h3 class="section-title">education</h3>
+                    <ul class="section__list">
+                        <li class="section__list-item item">
+                            <a href="https://rs.school/" target="_blank">the rolling scopes school</a>
+                        </li>
+                        <li class="section__list-item item">
+                            <a href="https://school.redcollar.ru/" target="_blank">RDCLR.SCHOOL</a>
+                        </li>
+                        <li class="section__list-item item">
+                            <a href="https://itgirlschool.com/" target="_blank">ITGIRLSCHOOL</a>
+                        </li>
+                        <li class="section__list-item item">
+                            <a href="https://udsu.ru/English" target="_blank">udmurt state university</a>
+                        </li>
+                    </ul>
+                </section>
+                <section class="section section__languages">
+                    <h3 class="section-title">languages</h3>
+                    <ul class="section__list">
+                        <li class="section__list-item">Russian - Native</li>
+                        <li class="section__list-item">Ukrainian - Native</li>
+                        <li class="section__list-item">French - Upper-Intermediate</li>
+                        <li class="section__list-item">English - Intermediate</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="copyright">
+                    <p>© Iuliia Bogdanova, 2024</p>
+                </div>
+                <a href="https://github.com/Iuliia-Bogdanova" target="_blank">
+                    <img src="./assets/img/gh-black.svg" class="item footer-item" alt="GitHub">
+                </a>
+                <a href="https://rs.school/courses/javascript-ru" class="logo">
+                    <img src="./assets/img/rs.svg" alt="Logo" class="logo-img">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
