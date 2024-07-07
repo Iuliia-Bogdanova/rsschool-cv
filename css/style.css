@@ -1,4 +1,11 @@
 @font-face {
+    font-family: 'Varela Round', sans-serif;
+    src: url(../assets/fonts/VarelaRound-Regular.woff2);
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
     font-family: 'Comfortaa', sans-serif;
     src: url(../assets/fonts/Comfortaa-SemiBold.woff2);
     font-style: normal;
@@ -15,11 +22,12 @@
 :root {
     --color-main: #e3e4de;
     --color-accent: #eab268;
-    /* --color-text: #2e3630; */
+    --color-text: #2e3630;
 }
 
 html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 *, 
@@ -49,18 +57,22 @@ body {
     overflow: auto;
     font-family: 'Jura', sans-serif;
     font-weight: normal;
-    background: var(--color-main);
-    color: var(--color-text);
+    background: var(--color-main);    
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Comfortaa', sans-serif;
-    text-transform: uppercase;
+body::-webkit-scrollbar {
+    background: inherit;
+    width: 8px;
+    height: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    border: 1px solid var(--color-accent);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-accent);
 }
 
 .header,
@@ -75,7 +87,7 @@ h6 {
     padding: 0 20px;
 }
 
-.header__container {
+.header-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -109,4 +121,135 @@ h6 {
     opacity: 0.7;
 }
 
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    color: var(--color-text);
+}
 
+.divider {
+    width: 90%;
+    height: 4px;
+    margin: 10px auto;
+    background-color: var(--color-text);
+    opacity: 0.4;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 30px 0;
+    /* border: 1px solid green; */
+}
+
+.photo {
+    max-width: 300px;
+    margin: 0 auto;
+    border: 10px solid var(--color-accent);
+    border-radius: 50%;
+}
+
+.section__profile {
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 48px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 36px;
+    text-transform: capitalize;
+    opacity: 0.8;
+}
+
+.section-title {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 28px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+}
+
+.section__contacts {
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.contacts__item {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: relative;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -2%;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.item {
+    padding-left: 36px;
+    padding-bottom: 20px;
+    transition: transform 0.2s ease;
+}
+
+.item:hover {
+    transform: scale(0.95);
+    opacity: 0.8;
+}
+
+.item-city:hover {
+    transform: none;
+    opacity: 1;
+}
+
+.item-city::before {
+    position: absolute;
+    content: "";
+    background-image: url(../assets/img/city.svg);
+    width: 20px;
+    height: 24px;
+    left: 0;
+}
+
+.item-phone::before {
+    position: absolute;
+    content: "";
+    background-image: url(../assets/img/phone-call.svg);
+    width: 19px;
+    height: 19px;
+    left: 0;
+}
+
+.item-mail::before {
+    position: absolute;
+    content: "";
+    background-image: url(../assets/img/mail.svg);
+    width: 20px;
+    height: 15px;
+    left: 0;
+}
+
+.item-tg::before {
+    position: absolute;
+    content: "";
+    background-image: url(../assets/img/tg.svg);
+    width: 23px;
+    height: 20px;
+    left: 0;
+}
+
+.item-gh::before {
+    position: absolute;
+    content: "";
+    background-image: url(../assets/img/gh.svg);
+    width: 22px;
+    height: 21px;
+    left: 0;
+}
