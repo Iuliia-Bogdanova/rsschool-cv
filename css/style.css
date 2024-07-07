@@ -170,8 +170,10 @@ h2 {
 }
 
 .section-title {
+    padding-bottom: 20px;
     font-family: 'Comfortaa', sans-serif;
     font-size: 28px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--color-accent);
 }
@@ -187,10 +189,9 @@ h2 {
     flex-direction: column;
     position: relative;
     font-size: 20px;
-    line-height: 24px;
+    line-height: 1.5;
     letter-spacing: -2%;
-    margin-top: 20px;
-    padding: 0;
+    /* padding: 0; */
 }
 
 .item {
@@ -253,3 +254,31 @@ h2 {
     height: 21px;
     left: 0;
 }
+
+p:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.summary-text {
+    text-align: right;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.section__list-item {
+    padding: 0;
+    list-style-type: circle;
+    list-style-position: inside;
+    font-size: 20px;
+    line-height: 2;
+    text-transform: capitalize;
+    transition: transform 0.2s ease;
+}
+
+.section__list-item::marker {
+    color: var(--color-accent);
+}
+
+
+
