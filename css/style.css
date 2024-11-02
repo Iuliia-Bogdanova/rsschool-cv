@@ -304,6 +304,11 @@ p:not(:last-child) {
     background-color: var(--color-accent);
 }
 
+.code {
+    display: inline-block;
+    /* margin-left: -200px;  */
+}
+
 .footer-item {
     padding: 0;
 }
@@ -344,6 +349,9 @@ p:not(:last-child) {
     .section__languages {
         text-align: center;
     }
+    .code {
+        margin-left: -200px; 
+    }
     .footer-container {
         display: flex;
         flex-direction: column-reverse;
@@ -381,5 +389,8 @@ p:not(:last-child) {
     }
     h2 {
         font-size: 28px;
+    }
+    .code {
+        margin-left: -300px; 
     }
 }
