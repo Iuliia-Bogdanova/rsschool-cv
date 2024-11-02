@@ -8,7 +8,7 @@
     <link rel="icon" href="./assets/img/rsschool-favicon.ico">
 </head>
 <body>
-    <div class="header">
+    <header class="header">
         <div class="container">
             <div class="header-container">
                 <a href="https://rs.school/courses/javascript-ru" class="logo header-logo">
@@ -35,8 +35,8 @@
                 </nav>
             </div>
         </div>
-    </div>
-    <div class="main">
+    </header>
+    <main class="main">
         <div class="container">
             <div class="main-container">
                 <div class="section section__photo">
@@ -50,35 +50,27 @@
                 <section class="section section__contacts" id="contacts">
                     <h3 class="section-title">contacts</h3>
                     <ul class="contacts__item">
-                        <li class="item item-city">Izhevsk, Udmurtia</li>                        
-                        <li class="item">+7 963 546 30 96
-                            <a class="item-phone" href="tel:+79635463096" target="_blank"></a>
+                        <li class="item item-city">Izhevsk, Udmurtia</li>
+                        <li class="item">
+                            <a class="item-phone" href="tel:+79635463096" target="_blank">+7 963 546 30 96</a>
                         </li>
-                        <li class="item">iuliia.bogdanova5020@gmail.com
-                            <a class="item-mail" href="mailto:iuliia.bogdanova5020@gmail.com" target="_blank"></a>
+                        <li class="item">
+                            <a class="item-mail" href="mailto:iuliia.bogdanova5020@gmail.com" target="_blank">iuliia.bogdanova5020&#8203;@gmail.com</a>
                         </li>
-                        <li class="item">iuliia_bg
-                            <a class="item-tg" href="https://t.me/iuliia_bg" target="_blank"></a>
+                        <li class="item">
+                            <a class="item-tg" href="https://t.me/iuliia_bg" target="_blank">iuliia_bg</a>
                         </li>
-                        <li class="item">https://github.com/Iuliia-Bogdanova
-                            <a class="item-gh" href="https://github.com/Iuliia-Bogdanova" target="_blank"></a>
+                        <li class="item">
+                            <a class="item-gh" href="https://github.com/Iuliia-Bogdanova" target="_blank">https://github.com/&#8203;Iuliia-Bogdanova</a>
                         </li>
                     </ul>
                 </section>
                 <section class="section section__summary" id="summary">
                     <h3 class="section-title">summary</h3>
-                    <p class="summary-text">
-                        More than a year ago, I became passionate about frontend development and decided to change my profession. I love layout, I’m building up my knowledge of JavaScript and ReactJS.
-                    </p>
-                    <p class="summary-text">
-                        What attracts me to IT is the ability to think systematically and structurally. I am fascinated by the creative component of frontend development, which is the combination of visual appeal and user interface usability.
-                    </p>
-                    <p class="summary-text">
-                        I am attentive to details, able to take responsibility and recognize mistakes. I keep my composure and meet deadlines.
-                    </p>
-                    <p class="summary-text">
-                        My hobbies are traveling, architecture, cars, animals.
-                    </p>
+                    <p class="summary-text">More than a year ago, I became passionate about frontend development and decided to change my profession. I love layout, I'm building up my knowledge of JavaScript and ReactJS.</p>
+                    <p class="summary-text">What attracts me to IT is the ability to think systematically and structurally. I am fascinated by the creative component of frontend development, which is the combination of visual appeal and user interface usability.</p>
+                    <p class="summary-text">I am attentive to details, able to take responsibility and recognize mistakes. I keep my composure and meet deadlines.</p>
+                    <p class="summary-text">My hobbies are traveling, architecture, cars, animals.</p>
                 </section>
                 <hr class="divider">
                 <section class="section section__skills" id="skills">
@@ -116,27 +108,19 @@
                     <h3 class="section-title">code</h3>
                     <pre>
                         <code>
-                        document.addEventListener("DOMContentLoaded", function (event) {
-                            getWeather('Izhevsk');
-                        });
+                            function mobileNav() {
+                                const navBtn = document.querySelector('.mobile-nav-btn');
+                                const nav = document.querySelector('.mobile-nav');
+                                const menuIcon = document.querySelector('.nav-icon');
 
-                        function getWeather(city) {
-                            fetch('https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=d6e481919bcce169184f16536bb64bd8&units=metric')
-                                .then(response => response.json())
-                                .then(weather => {
-                                    console.log(weather);
-                                    document.querySelector('.city')
-                                    .innerText = weather.name;
-                                    document.querySelector('.date')
-                                    .innerText = new Date;
-                                    document.querySelector('.tempValue').innerText = Math.round(weather.main.temp) + " ° ";
-                                    document.querySelector('.feels_like').innerText = "feels like " + Math.round(weather.main.feels_like)  + " ° ";
-                                    document.querySelector('.weather').innerText = weather.weather[0].description;
-                                    document.querySelector('.humidity').innerText = "humidity " + weather.main.humidity + " % ";
-                                    document.querySelector('.visibility').innerText = "visibility " + weather.visibility + " m ";
-                                })
-                            .catch(err => console.log(err));
-                        }
+                                navBtn.onclick = function () {
+                                    nav.classList.toggle('mobile-nav--open');
+                                    menuIcon.classList.toggle('nav-icon--active');
+                                    document.body.classList.toggle('no-scroll');
+                                };
+                            }
+
+                            export default mobileNav;
                         </code>
                     </pre>
                 </section>
@@ -169,7 +153,7 @@
                 </section>
             </div>
         </div>
-    </div>
+    </main>
     <footer class="footer">
         <div class="container">
             <div class="footer-container">
@@ -180,7 +164,7 @@
                     <img src="./assets/img/gh-black.svg" class="item footer-item" alt="GitHub">
                 </a>
                 <a href="https://rs.school/courses/javascript-ru" class="logo">
-                    <img src="./assets/img/rs.svg" alt="Logo" class="logo-img">
+                    <img src="./assets/img/rs.svg" class="logo-img" alt="Logo">
                 </a>
             </div>
         </div>

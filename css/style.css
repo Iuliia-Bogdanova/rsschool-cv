@@ -187,13 +187,13 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    position: relative;
     font-size: 20px;
     line-height: 1.5;
     letter-spacing: -2%;
 }
 
 .item {
+    position: relative;
     padding-left: 36px;
     padding-bottom: 20px;
     transition: transform 0.2s ease;
@@ -216,6 +216,7 @@ h2 {
     width: 20px;
     height: 24px;
     left: 0;
+    top: 6px;
 }
 
 .item-phone::before {
@@ -225,6 +226,7 @@ h2 {
     width: 19px;
     height: 19px;
     left: 0;
+    top: 6px;
 }
 
 .item-mail::before {
@@ -234,6 +236,7 @@ h2 {
     width: 20px;
     height: 15px;
     left: 0;
+    top: 6px;
 }
 
 .item-tg::before {
@@ -243,6 +246,7 @@ h2 {
     width: 23px;
     height: 20px;
     left: 0;
+    top: 6px;
 }
 
 .item-gh::before {
@@ -252,6 +256,7 @@ h2 {
     width: 22px;
     height: 21px;
     left: 0;
+    top: 6px;
 }
 
 p:not(:last-child) {
@@ -342,7 +347,7 @@ p:not(:last-child) {
     .footer-container {
         display: flex;
         flex-direction: column-reverse;
-        gap: 10px;
+        gap: 16px;
     }
     .footer-item {
         padding-bottom: 0;
@@ -350,6 +355,9 @@ p:not(:last-child) {
 }
 
 @media (max-width: 536px) {
+    body::-webkit-scrollbar {
+        display: none;
+    }
     .header-logo {
         display: block;
     }
@@ -361,5 +369,17 @@ p:not(:last-child) {
         flex-direction: column;
         align-items: end;
         gap: 10px;
+    }
+    .photo {
+        max-width: 280px;
+        margin: 0 auto;
+        border: 10px solid var(--color-accent);
+        border-radius: 50%;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    h2 {
+        font-size: 28px;
     }
 }
